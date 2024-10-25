@@ -48,11 +48,13 @@ public class App {
 
 
         ///////////////////////////////////////////
+        //
         /*
          * ARRAYLIST
          * 
          * ARRAYLIST 2D 
          */
+        //
         //
         //dichiaro l'ArrayList,ne definisco il tipo, e lo nomino
         //creo l'ArrayList e ne definisco il tipo
@@ -109,5 +111,38 @@ public class App {
         people.clear();
 
         System.out.println(people.get(0)); //ERRORE PERCHE' L'ARRAYLIST E' STATO COMPLETAMENTE SVUOTATO
+
+
+        /* ARRAYLIST 2D - Arraylist di ArrayList */
+        //
+        //
+        //CREO UN ARRAYLIST CHE SARA' IL PADRE DEGLI ALTRI ARRAYLIST FIGLI
+        //dischiaro l'arraylist, ne dichiaro un altro come fosse un tag, ne definisco il tipo, e lo nomino: ArrayLsit <ArrayList <Type_Variable>> nomeArray
+        //creo un nuovo arrayList: new ArrayList()
+        ArrayList <ArrayList<Integer>> numbers = new ArrayList();
+
+        //creo ArrayList Figli a cui aggiungo dei valori [add()]
+        ArrayList<Integer> numberOne = new ArrayList<Integer>();
+        numberOne.add(10);
+        numberOne.add(20);
+
+        ArrayList<Integer> numberTwo = new ArrayList<Integer>();
+        numberTwo.add(100);
+        numberTwo.add(200);
+
+        //aggiungo gli ArrayList Figli nell'ArrayList Padre
+        numbers.add(numberOne);
+        numbers.add(numberTwo);
+
+        //ciclo l'ArrayList Padre per accedere agli ArrayList Figli: [array.size()] 
+        //ciclo gli ArrayList Figli, in base all'indice del primo ciclo (i): [array.get(i).size()]
+        //accedo al singolo ArrayList Figlio per leggerne il valore, in base all'indice del secondo ciclo (j): [array.get(i).get(j)]
+        for(int i = 0; i < numbers.size(); i++){
+            System.out.println();
+            for(int j = 0; j < numbers.get(i).size(); i++){
+                System.out.println(numbers.get(i).get(j));
+            }
+        }
+
     }
 }
