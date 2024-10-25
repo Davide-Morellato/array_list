@@ -110,7 +110,7 @@ public class App {
         //per svuotare l'ArrayList, sfrutto il metodo .clear()
         people.clear();
 
-        System.out.println(people.get(0)); //ERRORE PERCHE' L'ARRAYLIST E' STATO COMPLETAMENTE SVUOTATO
+        //System.out.println(people.get(0)); //ERRORE PERCHE' L'ARRAYLIST E' STATO COMPLETAMENTE SVUOTATO
 
 
         /* ARRAYLIST 2D - Arraylist di ArrayList */
@@ -139,7 +139,7 @@ public class App {
         //accedo al singolo ArrayList Figlio per leggerne il valore, in base all'indice del secondo ciclo (j): [array.get(i).get(j)]
         for(int i = 0; i < numbers.size(); i++){
             System.out.println();
-            for(int j = 0; j < numbers.get(i).size(); i++){
+            for(int j = 0; j < numbers.get(i).size(); j++){
                 System.out.println(numbers.get(i).get(j));
             }
         }
