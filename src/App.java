@@ -1,5 +1,6 @@
+import java.util.ArrayList;
+
 public class App {
-    @SuppressWarnings("static-access")
     public static void main(String[] args){
         /*
          * WRAPPER CLASS
@@ -44,5 +45,69 @@ public class App {
         //dichairo un carattere come Wrapper class ed invoco il metodo .toUpperCase()
         Character charac = 'f';
         System.out.println(charac.toUpperCase(charac)); //stampa il carattere Maiuscolo [N.B. se fosse rimasta una variabile primitiva di tipo "char", NON avrei avuto accesso al metodo toUpperCase()]
+
+
+        ///////////////////////////////////////////
+        /*
+         * ARRAYLIST
+         * 
+         * ARRAYLIST 2D 
+         */
+        //
+        //dichiaro l'ArrayList,ne definisco il tipo, e lo nomino
+        //creo l'ArrayList e ne definisco il tipo
+        ArrayList <String> people = new ArrayList<String>(); //è stato importato automaticamente: import java.util.ArrayList;
+
+
+        /* AGGIUNGO ELEMENTI [add()] */
+        people.add("Luca");
+        people.add("Marco");
+        people.add("Anna");
+
+        //stampo un valore inserito nell'array in base all'indice, mediante il metodo .get()
+        System.out.println(people.get(0)); //stampo il primo elemento dell'array
+
+
+        /* CICLO L'ARRAY */
+        //
+        //per stampare tutti gli elementi dell'array, uso il ciclo for
+        //essendo un ArrayList, si sfrutta il metodo size() per scorrerne la lunghezza
+        for(int i = 0; i < people.size(); i++){
+            System.out.println("elemento dell'ArrayList: " + people.get(i));
+        }
+
+
+        /* IMPOSTARE I DATI */
+        //
+        //per impostare nuovi dati sfrutto il metodo .set()
+        //passo 2 parametri: indice, valore
+        people.set(0, "Gianni");
+
+        System.out.println("nuovo valore indice 0: " + people.get(0)); //L'elemento "Luca" è stato sostituito da "Gianni"
+
+        //
+        //IN QUESTO CASO DEVE ESSERE FATTA UN AGGIUNTA
+        //PERCHE' L'INDICE 3 NON ESISTE IN QUESTO ARRAY
+        // people.set(3, "Davide");
+        // System.out.println(people.get(3)); -> ERRORE IN CONSOLE AL MOMENTO DELLA STAMPA
+        //
+
+        /* RIMUOVERE UN ELEMENTO */
+        //
+        //per rimuovere un elemento, uso il metodo .remove()
+        //in cui passo come parametro l'indice di rifermento
+        people.remove(1);
+        //ciclo l'array per stamparne gli elementi
+        for(int i = 0; i < people.size(); i++){
+            System.out.println("rimozione dell'indice 1: " + people.get(i)); //l'elemento all'indice 1 ("Marco") è stato rimosso
+        }
+
+
+        /* SVUOTAMENTO ARRAYLIST */
+        //
+        //per svuotare l'ArrayList, sfrutto il metodo .clear()
+        people.clear();
+
+        System.out.println(people.get(0)); //ERRORE PERCHE' L'ARRAYLIST E' STATO COMPLETAMENTE SVUOTATO
     }
 }
